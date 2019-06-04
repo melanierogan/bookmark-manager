@@ -10,11 +10,15 @@
       <tr>
         <th scope="col">Bookmark URL</th>
       </tr>
+      <% @bookmarks_list.each do |bookmark| %>
         <tr>
-          <td> <%= @bookmarks_list.join(", ") %></td>
+          <td> <a href="<%= bookmark%>"> <%= bookmark%> </a></td>
         </tr>
+      <% end%>
     </table>
   </body>
 </html>
+
+
 
 
