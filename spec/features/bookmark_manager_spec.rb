@@ -7,9 +7,9 @@ feature 'Visiting landing page' do
 end
 
 feature 'Viewing bookmarks' do
-  # scenario 'can view a list of bookmarks' do
-  #   visit '/bookmarks'
-  #   expect(page).to have_content('4')
-  #   expect(page).to have_content('http://www.google.com')
-  # end
+  scenario 'can view a list of bookmarks' do
+    visit '/bookmarks'
+    expect(page).to have_content('4')
+    expect(page).to have_content('http://www.google.com')
+  end
 end

@@ -1,3 +1,20 @@
-<body>
-  <%= @bookmarks_list.join(", ") %>
-</body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>THE BEST BOOKMARKS EVAR</title>
+  </head>
+  <body>
+    <table class="table">
+      <tr>
+        <th scope="col">Bookmark URL</th>
+      </tr>
+        <tr>
+          <td> <%= @bookmarks_list.join(", ") %></td>
+        </tr>
+    </table>
+  </body>
+</html>
+
+
