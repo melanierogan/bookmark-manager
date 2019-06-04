@@ -1,7 +1,13 @@
 ```
 As a user
-I want a list of my amazing ookmarks
+I want a list of my amazing bookmarks
 So I can find pages I have been to
+```
+
+```
+As a user
+I an add button
+So that I can add to bookmarks I already have
 ```
 
 | Objects  | Messages |
