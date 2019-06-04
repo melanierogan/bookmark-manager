@@ -1,12 +1,19 @@
 require './lib/bookmark.rb'
 
 describe '.all' do
-  it 'returns an array' do
-    expect(Bookmark.all).to be_an_instance_of(Array)
-  end
+  it 'returns a list of bookmarks' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
 
-  it 'returns an array of bookmarks' do
-    expect(Bookmark.all).to satisfy{ |array| array.all? { |bookmark| bookmark.instance_of? Bookmark} }
+    # Add the test data
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
+
+    bookmarks = Bookmark.all
+
+    expect(bookmarks).to include('http://www.makersacademy.com')
+    expect(bookmarks).to include('http://www.destroyallsoftware.com')
+    expect(bookmarks).to include('http://www.google.com')
   end
 end
 
